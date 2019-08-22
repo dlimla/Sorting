@@ -27,17 +27,21 @@ def selection_sort( arr ):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
-    for i in range(0, len(arr) - 1):
-        first_index = i
-        next_index = i+1
-        # if(next_index < first_index):
-        if(arr[i] > next_index):
-            arr[first_index], arr[next_index] = arr[next_index], arr[first_index]
+    for i in range( len(arr) - 1,0,-1):
+        for j in range(i):
+            first_index = arr[j]
+            next_index = arr[j+1]
+            # if(next_index < first_index):
+            if(first_index > next_index):
+                arr[j] = next_index
+                arr[j+1] = first_index
     return arr
 
-arr1 = [3,4]
+# arr1 = [22,11]
+# arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
 
-print(bubble_sort(arr1))
+
+# print(bubble_sort(arr1))
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
